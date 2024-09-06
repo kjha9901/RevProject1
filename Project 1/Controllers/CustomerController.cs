@@ -13,7 +13,7 @@ namespace Project_1.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        private readonly ShoppingApidbContext _context = new ShoppingApidbContext();
+        //private readonly ShoppingApidbContext _context = new ShoppingApidbContext();
 
         //public CustomerController(ShoppingApidbContext context)
         //{
@@ -21,6 +21,15 @@ namespace Project_1.Controllers
         //}
 
         // GET: api/Customer
+
+        CustomerDetail _customerObj;
+
+        public CustomerController(CustomerDetail _customerObjREF)
+        {
+            _customerObj = _customerObjREF;
+        }
+
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CustomerDetail>>> GetCustomerDetails()
         {
