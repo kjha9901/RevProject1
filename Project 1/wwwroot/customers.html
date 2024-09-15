@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Customers</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script>
+        async function loadCustomers() {
+            try {
+                const response = await fetch('/api/Customer/get');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const customers = await response.json();
+                const customerTableBody = document.querySelector('#customerTable tbody');
+                customerTableBody.innerHTML = '';
+
+                if (customers.length === 0) {
+                    customerTableBody.innerHTML = '<tr><td colspan="3">No customers available</td></tr>';
+                } else {
+                    customers.forEach(customer => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${customer.customerId}</td>
+                            <td>${customer.customerName}</td>
+                            <td>${customer.customerIsMember ? 'Yes' : 'No'}</td>
+                        `;
+                        customerTableBody.appendChild(row);
+                    });
+                }
+            } catch (error) {
+                console.error('Error fetching customers:', error);
+                const customerTableBody = document.querySelector('#customerTable tbody');
+                customerTableBody.innerHTML = '<tr><td colspan="3">Error loading customers</td></tr>';
+            }
+        }
+
+        window.onload = loadCustomers;
+    </script>
+</head>
+<body>
+    <h1>Manage Customers</h1>
+
+    <h2>Customer List</h2>
+    <table border="1" id="customerTable">
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Member</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Customers appear here -->
+        </tbody>
+    </table>
+
+    <h2>Add Customer</h2>
+    <form action="/api/Customer/post" method="POST">
+        <label for="customerId">Customer ID:</label>
+        <input type="number" id="customerId" name="customerId" required><br><br>
+
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" name="customerName" required><br><br>
+
+        <label for="customerIsMember">Member:</label>
+        <select id="customerIsMember" name="customerIsMember">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select><br><br>
+
+        <button type="submit">Add Customer</button>
+    </form>
+
+    <h2>Delete Customer</h2>
+    <form id="deleteCustomerForm">
+        <label for="deleteCustomerId">Customer ID:</label>
+        <input type="number" id="deleteCustomerId" name="customerId" required><br><br>
+
+        <button type="submit">Delete Customer</button>
+    </form>
+
+
+    <script>
+        document.getElementById('deleteCustomerForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const customerId = document.getElementById('deleteCustomerId').value;
+
+            fetch(`/api/Customer/${customerId}`, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        return response.text();
+                    }
+                })
+                .then(message => {
+                    document.getElementById('message').innerText = message;
+                    loadCustomers();
+                })
+                .catch(error => {
+                    document.getElementById('message').innerText = 'Error deleting customer: ' + error;
+                });
+        });
+    </script>
+</body>
+</html>

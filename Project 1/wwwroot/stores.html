@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Stores</title>
+    <link rel="stylesheet" href="mystyle.css">
+
+    <script>
+        async function loadStores() {
+            try {
+                const response = await fetch('/api/Store/get');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const stores = await response.json();
+                const storeTableBody = document.querySelector('#storeTable tbody');
+                storeTableBody.innerHTML = '';
+
+                if (stores.length === 0) {
+                    storeTableBody.innerHTML = '<tr><td colspan="3">No stores available</td></tr>';
+                } else {
+                    stores.forEach(store => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${store.storeId}</td>
+                            <td>${store.storeName}</td>
+                            <td>${store.storeCity}</td>
+                        `;
+                        storeTableBody.appendChild(row);
+                    });
+                }
+            } catch (error) {
+                console.error('Error fetching stores:', error);
+                const storeTableBody = document.querySelector('#storeTable tbody');
+                storeTableBody.innerHTML = '<tr><td colspan="3">Error loading stores</td></tr>';
+            }
+        }
+        window.onload = loadStores;
+    </script>
+</head>
+
+
+<body>
+    <h1>Manage Stores</h1>
+
+    <h2>Store List</h2>
+    <table border="1" id="storeTable">
+        <thead>
+            <tr>
+                <th>Store ID</th>
+                <th>Store Name</th>
+                <th>Store City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Stores appear here -->
+        </tbody>
+    </table>
+
+    <h2>Add Store</h2>
+    <form action="/api/Store/post" method="POST">
+        <label for="storeId">Store ID:</label>
+        <input type="number" id="storeId" name="storeId" required><br><br>
+
+        <label for="storeName">Store Name:</label>
+        <input type="text" id="storeName" name="storeName" required><br><br>
+
+        <label for="storeCity">Store City:</label>
+        <input type="text" id="storeCity" name="storeCity" required><br><br>
+
+        <button type="submit">Add Store</button>
+    </form>
+
+    <h2>Delete Store</h2>
+    <form id="deleteStoreForm">
+        <label for="deleteStoreId">Store ID:</label>
+        <input type="number" id="deleteStoreId" name="storeId" required><br><br>
+
+        <button type="submit">Delete Store</button>
+    </form>
+
+
+    <script>
+        // Handle Delete Store Form Submission
+        document.getElementById('deleteStoreForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const storeId = document.getElementById('deleteStoreId').value;
+
+            fetch(`/api/Store/${storeId}`, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        return response.text();
+                    }
+                })
+                .then(message => {
+                    document.getElementById('message').innerText = message;
+                    loadStores();
+                })
+                .catch(error => {
+                    document.getElementById('message').innerText = 'Error deleting store: ' + error;
+                });
+        });
+    </script>
+</body >
+</html >

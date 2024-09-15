@@ -21,10 +21,11 @@ namespace Project_1.Controllers
         //}
 
         // GET: api/Stock
-        [HttpGet]
+        [HttpGet("get")]
         public async Task<ActionResult<IEnumerable<StockDetail>>> GetStockDetails()
         {
-            return await _context.StockDetails.ToListAsync();
+            var stock = await _context.StockDetails.ToListAsync();
+            return Ok(stock);
         }
 
         // GET: api/Stock/5
@@ -74,8 +75,8 @@ namespace Project_1.Controllers
 
         // POST: api/Stock
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<StockDetail>> PostStockDetail(StockDetail stockDetail)
+        [HttpPost("post")]
+        public async Task<ActionResult<StockDetail>> PostStockDetail([FromForm] StockDetail stockDetail)
         {
             _context.StockDetails.Add(stockDetail);
             try
@@ -110,7 +111,7 @@ namespace Project_1.Controllers
             _context.StockDetails.Remove(stockDetail);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok("Stock deleted successfully.");
         }
 
         private bool StockDetailExists(int id)

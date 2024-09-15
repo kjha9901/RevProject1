@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Products</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script>
+        async function loadProducts() {
+            try {
+                const response = await fetch('/api/Product/get');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const products = await response.json();
+                const productTableBody = document.querySelector('#productTable tbody');
+                productTableBody.innerHTML = '';
+
+                if (products.length === 0) {
+                    productTableBody.innerHTML = '<tr><td colspan="5">No products available</td></tr>';
+                } else {
+                    products.forEach(product => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${product.productId}</td>
+                            <td>${product.productName}</td>
+                            <td>${product.productCategory}</td>
+                            <td>${product.productPrice}</td>
+                            <td><img src="${product.productImage}" alt="${product.productName}" width="100" /></td>
+                        `;
+                        productTableBody.appendChild(row);
+                    });
+                }
+            } catch (error) {
+                console.error('Error fetching products:', error);
+                const productTableBody = document.querySelector('#productTable tbody');
+                productTableBody.innerHTML = '<tr><td colspan="5">Error loading products</td></tr>';
+            }
+        }
+
+        window.onload = loadProducts;
+    </script>
+</head>
+<body>
+    <h1>Manage Products</h1>
+
+    <h2>Product List</h2>
+    <table border="1" id="productTable">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Products appear here -->
+        </tbody>
+    </table>
+
+    <h2>Add Product</h2>
+    <form action="/api/Product/post" method="POST">
+        <label for="productId">Product ID:</label>
+        <input type="number" id="productId" name="productId" required><br><br>
+
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" required><br><br>
+
+        <label for="productCategory">Category:</label>
+        <input type="text" id="productCategory" name="productCategory" required><br><br>
+
+        <label for="productPrice">Price:</label>
+        <input type="number" id="productPrice" name="productPrice" step="0.01" required><br><br>
+
+        <label for="productImage">Image URL:</label>
+        <input type="text" id="productImage" name="productImage" required><br><br>
+
+        <button type="submit">Add Product</button>
+    </form>
+
+    <h2>Delete Product</h2>
+    <form id="deleteProductForm">
+        <label for="deleteProductId">Product ID:</label>
+        <input type="number" id="deleteProductId" name="productId" required><br><br>
+        <button type="submit">Delete Product</button>
+    </form>
+
+    <script>
+        document.getElementById('deleteProductForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const productId = document.getElementById('deleteProductId').value;
+
+            fetch(`/api/Product/${productId}`, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        return response.text();
+                    }
+                })
+                .then(message => {
+                    document.getElementById('message').innerText = message;
+                    loadProducts();
+                })
+                .catch(error => {
+                    document.getElementById('message').innerText = 'Error deleting product: ' + error;
+                });
+        });
+    </script>
+</body>
+</html>

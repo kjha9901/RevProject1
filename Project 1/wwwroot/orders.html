@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Orders</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script>
+        async function loadOrders() {
+            try {
+                const response = await fetch('/api/Order/get');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const orders = await response.json();
+                const orderTableBody = document.querySelector('#orderTable tbody');
+                orderTableBody.innerHTML = '';
+
+                if (orders.length === 0) {
+                    orderTableBody.innerHTML = '<tr><td colspan="6">No orders available</td></tr>';
+                } else {
+                    orders.forEach(order => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${order.orderId}</td>
+                            <td>${order.orderCustomerId}</td>
+                            <td>${order.orderProductId}</td>
+                            <td>${order.orderQuantity}</td>
+                            <td>${order.orderFromStore}</td>
+                            <td>${order.orderFastShipping ? 'Yes' : 'No'}</td>
+                        `;
+                        orderTableBody.appendChild(row);
+                    });
+                }
+            } catch (error) {
+                console.error('Error fetching orders:', error);
+                const orderTableBody = document.querySelector('#orderTable tbody');
+                orderTableBody.innerHTML = '<tr><td colspan="6">Error loading orders</td></tr>';
+            }
+        }
+
+        window.onload = loadOrders;
+    </script>
+</head>
+<body>
+    <h1>Manage Orders</h1>
+
+    <h2>Order List</h2>
+    <table border="1" id="orderTable">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer ID</th>
+                <th>Product ID</th>
+                <th>Quantity</th>
+                <th>Store ID</th>
+                <th>Fast Shipping</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Orders appear here -->
+        </tbody>
+    </table>
+
+    <h2>Add Order</h2>
+    <form action="/api/Order/post" method="POST">
+        <label for="orderId">Order ID:</label>
+        <input type="number" id="orderId" name="orderId" required><br><br>
+
+        <label for="orderCustomerId">Customer ID:</label>
+        <input type="number" id="orderCustomerId" name="orderCustomerId" required><br><br>
+
+        <label for="orderProductId">Product ID:</label>
+        <input type="number" id="orderProductId" name="orderProductId" required><br><br>
+
+        <label for="orderQuantity">Quantity:</label>
+        <input type="number" id="orderQuantity" name="orderQuantity" required><br><br>
+
+        <label for="orderFromStore">Store ID:</label>
+        <input type="number" id="orderFromStore" name="orderFromStore" required><br><br>
+
+        <label for="orderFastShipping">Fast Shipping:</label>
+        <select id="orderFastShipping" name="orderFastShipping">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select><br><br>
+
+        <button type="submit">Add Order</button>
+    </form>
+
+    <h2>Delete Order</h2>
+    <form id="deleteOrderForm">
+        <label for="deleteOrderId">Order ID:</label>
+        <input type="number" id="deleteOrderId" name="orderId" required><br><br>
+
+        <button type="submit">Delete Order</button>
+    </form>
+
+    <script>
+        document.getElementById('deleteOrderForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const orderId = document.getElementById('deleteOrderId').value;
+
+            fetch(`/api/Order/${orderId}`, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        return response.text();
+                    }
+                })
+                .then(message => {
+                    document.getElementById('message').innerText = message;
+                    loadOrders();
+                })
+                .catch(error => {
+                    document.getElementById('message').innerText = 'Error deleting order: ' + error;
+                });
+        });
+    </script>
+</body>
+</html>

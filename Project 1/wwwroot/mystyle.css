@@ -1,0 +1,23 @@
+﻿body {
+    text-align: center;
+    background-color: slategrey;
+}
+table{
+    color:white;
+}
+h1 {
+    background-color: orangered;
+    color: white;
+}
+h2 {
+    color:white;
+}
+
+p1 {
+    font-size: 25px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}

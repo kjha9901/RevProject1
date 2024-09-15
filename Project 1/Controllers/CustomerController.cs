@@ -13,7 +13,7 @@ namespace Project_1.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        //private readonly ShoppingApidbContext _context = new ShoppingApidbContext();
+        private readonly ShoppingApidbContext _context = new ShoppingApidbContext();
 
         //public CustomerController(ShoppingApidbContext context)
         //{
@@ -22,18 +22,13 @@ namespace Project_1.Controllers
 
         // GET: api/Customer
 
-        CustomerDetail _customerObj;
-
-        public CustomerController(CustomerDetail _customerObjREF)
-        {
-            _customerObj = _customerObjREF;
-        }
 
 
-        [HttpGet]
+        [HttpGet("get")]
         public async Task<ActionResult<IEnumerable<CustomerDetail>>> GetCustomerDetails()
         {
-            return await _context.CustomerDetails.ToListAsync();
+            var customer = await _context.CustomerDetails.ToListAsync();
+            return Ok(customer);
         }
 
         // GET: api/Customer/5
@@ -83,8 +78,8 @@ namespace Project_1.Controllers
 
         // POST: api/Customer
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<CustomerDetail>> PostCustomerDetail(CustomerDetail customerDetail)
+        [HttpPost("post")]
+        public async Task<ActionResult<CustomerDetail>> PostCustomerDetail([FromForm] CustomerDetail customerDetail)
         {
             _context.CustomerDetails.Add(customerDetail);
             try
@@ -119,7 +114,7 @@ namespace Project_1.Controllers
             _context.CustomerDetails.Remove(customerDetail);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok("Customer destroyed successfully.");
         }
 
         private bool CustomerDetailExists(int id)

@@ -21,10 +21,11 @@ namespace Project_1.Controllers
         //}
 
         // GET: api/Order
-        [HttpGet]
+        [HttpGet("get")]
         public async Task<ActionResult<IEnumerable<OrderDetail>>> GetOrderDetails()
         {
-            return await _context.OrderDetails.ToListAsync();
+            var order = await _context.OrderDetails.ToListAsync();
+            return Ok(order);
         }
 
         // GET: api/Order/5
@@ -74,8 +75,8 @@ namespace Project_1.Controllers
 
         // POST: api/Order
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<OrderDetail>> PostOrderDetail(OrderDetail orderDetail)
+        [HttpPost("post")]
+        public async Task<ActionResult<OrderDetail>> PostOrderDetail([FromForm] OrderDetail orderDetail)
         {
             _context.OrderDetails.Add(orderDetail);
             try
@@ -110,7 +111,7 @@ namespace Project_1.Controllers
             _context.OrderDetails.Remove(orderDetail);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok("Order deleted successfully.");
         }
 
         private bool OrderDetailExists(int id)

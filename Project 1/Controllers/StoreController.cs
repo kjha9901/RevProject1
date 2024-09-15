@@ -21,10 +21,11 @@ namespace Project_1.Controllers
         //}
 
         // GET: api/Store
-        [HttpGet]
+        [HttpGet("get")]
         public async Task<ActionResult<IEnumerable<StoreDetail>>> GetStoreDetails()
         {
-            return await _context.StoreDetails.ToListAsync();
+            var stores = await _context.StoreDetails.ToListAsync();
+            return Ok(stores);
         }
 
         // GET: api/Store/5
@@ -74,8 +75,8 @@ namespace Project_1.Controllers
 
         // POST: api/Store
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<StoreDetail>> PostStoreDetail(StoreDetail storeDetail)
+        [HttpPost("post")]
+        public async Task<ActionResult<StoreDetail>> PostStoreDetail([FromForm] StoreDetail storeDetail)
         {
             _context.StoreDetails.Add(storeDetail);
             try
@@ -110,7 +111,7 @@ namespace Project_1.Controllers
             _context.StoreDetails.Remove(storeDetail);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok("Store deleted successfully.");
         }
 
         private bool StoreDetailExists(int id)

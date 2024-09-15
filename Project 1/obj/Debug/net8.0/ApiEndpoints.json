@@ -1,52 +1,6 @@
 [
   {
     "ContainingType": "Project_1.Controllers.CustomerController",
-    "Method": "GetCustomerDetails",
-    "RelativePath": "api/Customer",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Project_1.Models.CustomerDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project_1.Controllers.CustomerController",
-    "Method": "PostCustomerDetail",
-    "RelativePath": "api/Customer",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "customerDetail",
-        "Type": "Project_1.Models.CustomerDetail",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Project_1.Models.CustomerDetail",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Project_1.Controllers.CustomerController",
     "Method": "GetCustomerDetail",
     "RelativePath": "api/Customer/{id}",
     "HttpMethod": "GET",
@@ -109,16 +63,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project_1.Controllers.OrderController",
-    "Method": "GetOrderDetails",
-    "RelativePath": "api/Order",
+    "ContainingType": "Project_1.Controllers.CustomerController",
+    "Method": "GetCustomerDetails",
+    "RelativePath": "api/Customer/get",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Project_1.Models.OrderDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Project_1.Models.CustomerDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -129,22 +83,37 @@
     ]
   },
   {
-    "ContainingType": "Project_1.Controllers.OrderController",
-    "Method": "PostOrderDetail",
-    "RelativePath": "api/Order",
+    "ContainingType": "Project_1.Controllers.CustomerController",
+    "Method": "PostCustomerDetail",
+    "RelativePath": "api/Customer/post",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "orderDetail",
-        "Type": "Project_1.Models.OrderDetail",
-        "IsRequired": true
+        "Name": "CustomerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "CustomerName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CustomerIsMember",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.OrderDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Project_1.Models.OrderDetail",
+        "Type": "Project_1.Models.CustomerDetail",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -218,16 +187,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project_1.Controllers.ProductController",
-    "Method": "GetProductDetails",
-    "RelativePath": "api/Product",
+    "ContainingType": "Project_1.Controllers.OrderController",
+    "Method": "GetOrderDetails",
+    "RelativePath": "api/Order/get",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Project_1.Models.ProductDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Project_1.Models.OrderDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -238,22 +207,127 @@
     ]
   },
   {
-    "ContainingType": "Project_1.Controllers.ProductController",
-    "Method": "PostProductDetail",
-    "RelativePath": "api/Product",
+    "ContainingType": "Project_1.Controllers.OrderController",
+    "Method": "PostOrderDetail",
+    "RelativePath": "api/Order/post",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "productDetail",
-        "Type": "Project_1.Models.ProductDetail",
-        "IsRequired": true
+        "Name": "OrderId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderCustomerId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderProductId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderQuantity",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderFromStore",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderFastShipping",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderCustomer.CustomerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderCustomer.CustomerName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderCustomer.CustomerIsMember",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderCustomer.OrderDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.OrderDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderFromStoreNavigation.StoreId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderFromStoreNavigation.StoreName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderFromStoreNavigation.StoreCity",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderFromStoreNavigation.OrderDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.OrderDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderFromStoreNavigation.StockDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.StockDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderProduct.ProductId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderProduct.ProductName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderProduct.ProductCategory",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderProduct.ProductPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderProduct.ProductImage",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderProduct.OrderDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.OrderDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderProduct.StockDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.StockDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Project_1.Models.ProductDetail",
+        "Type": "Project_1.Models.OrderDetail",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -327,16 +401,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project_1.Controllers.StockController",
-    "Method": "GetStockDetails",
-    "RelativePath": "api/Stock",
+    "ContainingType": "Project_1.Controllers.ProductController",
+    "Method": "GetProductDetails",
+    "RelativePath": "api/Product/get",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Project_1.Models.StockDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Project_1.Models.ProductDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -347,22 +421,52 @@
     ]
   },
   {
-    "ContainingType": "Project_1.Controllers.StockController",
-    "Method": "PostStockDetail",
-    "RelativePath": "api/Stock",
+    "ContainingType": "Project_1.Controllers.ProductController",
+    "Method": "PostProductDetail",
+    "RelativePath": "api/Product/post",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "stockDetail",
-        "Type": "Project_1.Models.StockDetail",
-        "IsRequired": true
+        "Name": "ProductId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProductName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProductCategory",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProductPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProductImage",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.OrderDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.StockDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Project_1.Models.StockDetail",
+        "Type": "Project_1.Models.ProductDetail",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -436,16 +540,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project_1.Controllers.StoreController",
-    "Method": "GetStoreDetails",
-    "RelativePath": "api/Store",
+    "ContainingType": "Project_1.Controllers.StockController",
+    "Method": "GetStockDetails",
+    "RelativePath": "api/Stock/get",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Project_1.Models.StoreDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Project_1.Models.StockDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -456,22 +560,97 @@
     ]
   },
   {
-    "ContainingType": "Project_1.Controllers.StoreController",
-    "Method": "PostStoreDetail",
-    "RelativePath": "api/Store",
+    "ContainingType": "Project_1.Controllers.StockController",
+    "Method": "PostStockDetail",
+    "RelativePath": "api/Stock/post",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "storeDetail",
-        "Type": "Project_1.Models.StoreDetail",
-        "IsRequired": true
+        "Name": "StockId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockStoreId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockProductName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockQuantity",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockProductNameNavigation.ProductId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockProductNameNavigation.ProductName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockProductNameNavigation.ProductCategory",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockProductNameNavigation.ProductPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockProductNameNavigation.ProductImage",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockProductNameNavigation.OrderDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.OrderDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockProductNameNavigation.StockDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.StockDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockStore.StoreId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockStore.StoreName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockStore.StoreCity",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockStore.OrderDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.OrderDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockStore.StockDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.StockDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Project_1.Models.StoreDetail",
+        "Type": "Project_1.Models.StockDetail",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -543,6 +722,72 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project_1.Controllers.StoreController",
+    "Method": "GetStoreDetails",
+    "RelativePath": "api/Store/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Project_1.Models.StoreDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Project_1.Controllers.StoreController",
+    "Method": "PostStoreDetail",
+    "RelativePath": "api/Store/post",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "StoreId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "StoreName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "StoreCity",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.OrderDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockDetails",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Project_1.Models.StockDetail, Project 1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Project_1.Models.StoreDetail",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Project_1.Controllers.WeatherForecastController",

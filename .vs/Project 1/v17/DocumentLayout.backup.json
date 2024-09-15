@@ -3,32 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\wwwroot\\homescreen.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\wwwroot\\homescreen.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\models\\shoppingapidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\models\\shoppingapidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\controllers\\stockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\controllers\\stockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\wwwroot\\orders.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\wwwroot\\orders.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\wwwroot\\stock.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\wwwroot\\stock.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\wwwroot\\customers.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\wwwroot\\customers.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\wwwroot\\stores.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\wwwroot\\stores.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\wwwroot\\mystyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\wwwroot\\mystyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\wwwroot\\products.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\wwwroot\\products.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|c:\\users\\kenny\\desktop\\cohort 08052024\\project 1\\project 1\\project 1\\wwwroot\\homescreen.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3621F563-E361-49E5-A71C-B9971AE9AFFB}|Project 1\\Project 1.csproj|solutionrelative:project 1\\wwwroot\\homescreen.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,88 +54,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "homescreen.html",
-              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\homescreen.html",
-              "RelativeDocumentMoniker": "Project 1\\wwwroot\\homescreen.html",
-              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\homescreen.html",
-              "RelativeToolTip": "Project 1\\wwwroot\\homescreen.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-09-04T21:46:02.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Project 1\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Project 1\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAgwBIAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T21:52:54.145Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "Project 1\\Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "Project 1\\Controllers\\CustomerController.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAA0wFUAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T22:18:42.404Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "Project 1\\Controllers\\OrderController.cs",
               "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Controllers\\OrderController.cs",
               "RelativeToolTip": "Project 1\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAA0wE4AAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T20:45:30.57Z"
+              "WhenOpened": "2024-09-15T20:46:22.934Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "StockController.cs",
-              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Controllers\\StockController.cs",
-              "RelativeDocumentMoniker": "Project 1\\Controllers\\StockController.cs",
-              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Controllers\\StockController.cs",
-              "RelativeToolTip": "Project 1\\Controllers\\StockController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T20:51:23.654Z"
+              "Title": "mystyle.css",
+              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\mystyle.css",
+              "RelativeDocumentMoniker": "Project 1\\wwwroot\\mystyle.css",
+              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\mystyle.css",
+              "RelativeToolTip": "Project 1\\wwwroot\\mystyle.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-12T21:57:09.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "customers.html",
+              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\customers.html",
+              "RelativeDocumentMoniker": "Project 1\\wwwroot\\customers.html",
+              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\customers.html",
+              "RelativeToolTip": "Project 1\\wwwroot\\customers.html",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAkwFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-09-12T21:36:44.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "products.html",
+              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\products.html",
+              "RelativeDocumentMoniker": "Project 1\\wwwroot\\products.html",
+              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\products.html",
+              "RelativeToolTip": "Project 1\\wwwroot\\products.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-09-12T21:37:58.71Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "StoreController.cs",
-              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Controllers\\StoreController.cs",
-              "RelativeDocumentMoniker": "Project 1\\Controllers\\StoreController.cs",
-              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Controllers\\StoreController.cs",
-              "RelativeToolTip": "Project 1\\Controllers\\StoreController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T20:44:09.637Z"
+              "Title": "stock.html",
+              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\stock.html",
+              "RelativeDocumentMoniker": "Project 1\\wwwroot\\stock.html",
+              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\stock.html",
+              "RelativeToolTip": "Project 1\\wwwroot\\stock.html",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-09-12T21:36:54.902Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ShoppingApidbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Models\\ShoppingApidbContext.cs",
-              "RelativeDocumentMoniker": "Project 1\\Models\\ShoppingApidbContext.cs",
-              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Models\\ShoppingApidbContext.cs",
-              "RelativeToolTip": "Project 1\\Models\\ShoppingApidbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAABAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Project 1\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "Project 1\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAA0wE8AAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T20:50:50.139Z",
+              "WhenOpened": "2024-09-15T20:40:08.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "orders.html",
+              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\orders.html",
+              "RelativeDocumentMoniker": "Project 1\\wwwroot\\orders.html",
+              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\orders.html",
+              "RelativeToolTip": "Project 1\\wwwroot\\orders.html",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAkwFkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-09-12T21:37:19.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "stores.html",
+              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\stores.html",
+              "RelativeDocumentMoniker": "Project 1\\wwwroot\\stores.html",
+              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\stores.html",
+              "RelativeToolTip": "Project 1\\wwwroot\\stores.html",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAEsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-09-12T21:36:21.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "homescreen.html",
+              "DocumentMoniker": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\homescreen.html",
+              "RelativeDocumentMoniker": "Project 1\\wwwroot\\homescreen.html",
+              "ToolTip": "C:\\Users\\Kenny\\Desktop\\Cohort 08052024\\Project 1\\Project 1\\Project 1\\wwwroot\\homescreen.html",
+              "RelativeToolTip": "Project 1\\wwwroot\\homescreen.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-09-04T21:46:02.338Z",
               "EditorCaption": ""
             }
           ]

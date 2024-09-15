@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="mystyle.css">
+    <title>Stock</title>
+    <script>
+        async function loadStock() {
+            try {
+                const response = await fetch('/api/Stock/get');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const stocks = await response.json();
+                const stockTableBody = document.querySelector('#stockTable tbody');
+                stockTableBody.innerHTML = '';
+
+                if (stocks.length === 0) {
+                    stockTableBody.innerHTML = '<tr><td colspan="4">No stock available</td></tr>';
+                } else {
+                    stocks.forEach(stock => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${stock.stockId}</td>
+                            <td>${stock.stockStoreId}</td>
+                            <td>${stock.stockProductName}</td>
+                            <td>${stock.stockQuantity}</td>
+                        `;
+                        stockTableBody.appendChild(row);
+                    });
+                }
+            } catch (error) {
+                console.error('Error fetching stock:', error);
+                const stockTableBody = document.querySelector('#stockTable tbody');
+                stockTableBody.innerHTML = '<tr><td colspan="4">Error loading stock</td></tr>';
+            }
+        }
+
+        window.onload = loadStock;
+    </script>
+</head>
+<body>
+    <h1>Manage Stock</h1>
+
+    <h2>Stock List</h2>
+    <table border="1" id="stockTable">
+        <thead>
+            <tr>
+                <th>Stock ID</th>
+                <th>Store ID</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Stock items appear here -->
+        </tbody>
+    </table>
+
+    <h2>Add Stock</h2>
+    <form action="/api/Stock/post" method="POST">
+        <label for="stockId">Stock ID:</label>
+        <input type="number" id="stockId" name="stockId" required><br><br>
+
+        <label for="stockStoreId">Store ID:</label>
+        <input type="number" id="stockStoreId" name="stockStoreId" required><br><br>
+
+        <label for="stockProductName">Product Name:</label>
+        <input type="text" id="stockProductName" name="stockProductName" required><br><br>
+
+        <label for="stockQuantity">Quantity:</label>
+        <input type="number" id="stockQuantity" name="stockQuantity" required><br><br>
+
+        <button type="submit">Add Stock</button>
+    </form>
+
+    <h2>Delete Stock</h2>
+    <form id="deleteStockForm">
+        <label for="deleteStockId">Stock ID:</label>
+        <input type="number" id="deleteStockId" name="stockId" required><br><br>
+
+        <button type="submit">Delete Stock</button>
+    </form>
+
+    <script>
+        document.getElementById('deleteStockForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const stockId = document.getElementById('deleteStockId').value;
+
+            fetch(`/api/Stock/${stockId}`, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        return response.text();
+                    }
+                })
+                .then(message => {
+                    document.getElementById('message').innerText = message;
+                    loadStock(); // Refresh the stock list
+                })
+                .catch(error => {
+                    document.getElementById('message').innerText = 'Error deleting stock: ' + error;
+                });
+        });
+    </script>
+</body>
+</html>

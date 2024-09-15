@@ -21,10 +21,11 @@ namespace Project_1.Controllers
         //}
 
         // GET: api/Product
-        [HttpGet]
+        [HttpGet("get")]
         public async Task<ActionResult<IEnumerable<ProductDetail>>> GetProductDetails()
         {
-            return await _context.ProductDetails.ToListAsync();
+            var products = await _context.ProductDetails.ToListAsync();
+            return Ok(products);
         }
 
         // GET: api/Product/5
@@ -74,8 +75,8 @@ namespace Project_1.Controllers
 
         // POST: api/Product
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<ProductDetail>> PostProductDetail(ProductDetail productDetail)
+        [HttpPost("post")]
+        public async Task<ActionResult<ProductDetail>> PostProductDetail([FromForm] ProductDetail productDetail)
         {
             _context.ProductDetails.Add(productDetail);
             try
@@ -110,7 +111,7 @@ namespace Project_1.Controllers
             _context.ProductDetails.Remove(productDetail);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok("Product deleted successfully.");
         }
 
         private bool ProductDetailExists(int id)
